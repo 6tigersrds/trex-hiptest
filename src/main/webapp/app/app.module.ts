@@ -23,9 +23,9 @@ import { ErrorComponent } from './layouts/error/error.component';
     HiptestHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     HiptestEntityModule,
-    HiptestAppRoutingModule
+    HiptestAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
-  bootstrap: [MainComponent]
+  bootstrap: [MainComponent],
 })
 export class HiptestAppModule {}

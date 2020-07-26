@@ -46,7 +46,7 @@ node {
     }
 
     stage('package and deploy') {
-        sh "./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=hiptest"
+        sh "./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=trex-hiptest"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 }

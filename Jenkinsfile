@@ -24,15 +24,16 @@ node {
     stage('npm install') {
         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
     }
-
+/*
     stage('backend tests') {
         try {
             sh "./mvnw -ntp verify"
         } catch(err) {
             throw err
         } finally {
-            junit '**/target/test-results/**/TEST-*.xml'
-        }
+*/
+//            junit '**/target/test-results/**/TEST-*.xml'
+/*        }
     }
 
     stage('frontend tests') {
@@ -41,10 +42,11 @@ node {
         } catch(err) {
             throw err
         } finally {
-            junit '**/target/test-results/**/TEST-*.xml'
-        }
+*/
+//            junit '**/target/test-results/**/TEST-*.xml'
+/*        }
     }
-
+*/
     stage('package and deploy') {
         sh "./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=trex-hiptest"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
